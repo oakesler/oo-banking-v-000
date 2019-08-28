@@ -29,7 +29,6 @@ class Transfer
     end
   end
 end
-end
 
   #def execute_transaction
     #while self.status == "pending"
