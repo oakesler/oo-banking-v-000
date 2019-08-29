@@ -19,6 +19,7 @@ class Transfer
   end
   
   def execute_transaction
+    binding.pry
     while self.status == "pending"
       if self.valid? == false
         self.status = "rejected"
