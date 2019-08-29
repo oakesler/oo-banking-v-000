@@ -20,11 +20,10 @@ class Transfer
   
   def execute_transaction
     binding.pry
-    while self.status == "pending"
-      if self.valid? == false
-        self.status = "rejected"
-        puts "Transaction rejected. Please check your account balance."
-        else
+    if self.status == "pending" && self.valid? == false
+      self.status = "rejected"
+      puts "Transaction rejected. Please check your account balance."
+      else
         sender.balance -= amount
         receiver.balance += amount
         self.status = "complete"
